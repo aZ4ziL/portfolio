@@ -1,14 +1,19 @@
+"use client";
+
 import fajriImage from "@/public/fajri.jpg";
 import { faFacebook, faGithub, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import {
   faAddressBook,
+  faBars,
   faCakeCandles,
   faEnvelope,
   faPhone,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Container from "./Container";
 
 interface Props {
@@ -16,9 +21,31 @@ interface Props {
 }
 
 export default function Sidebar({ children }: Props) {
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
   return (
     <div className="md:flex">
-      <div className="w-full mb-12 md:mb-0 md:w-[300px] md:min-h-screen bg-white dark:bg-gray-900 border-r border-r-gray-300 dark:border-r-gray-600">
+      <div className="fixed md:hidden z-30 top-2 left-2">
+        <button
+          className="w-10 h-10 rounded-full bg-sky-600 hover:bg-sky-500 text-white"
+          onClick={() => setShowSidebar(true)}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+      </div>
+      <div
+        className={`w-full mb-12 md:mb-0 md:w-[300px] md:min-h-screen fixed md:static top-0 ${
+          showSidebar ? "left-0 opacity-100 visible" : "-left-[1000px] opacity-0 invisible"
+        } md:visible md:opacity-100 z-50 bg-white dark:bg-gray-900 border-r border-r-gray-300 dark:border-r-gray-600 transition-all duration-300 ease-in-out`}
+      >
+        <div className="md:hidden absolute top-2 right-2">
+          <button
+            className="w-10 h-10 rounded-full bg-sky-600 hover:bg-sky-500 text-white"
+            onClick={() => setShowSidebar(false)}
+          >
+            <FontAwesomeIcon icon={faX} />
+          </button>
+        </div>
         {/* sidebar header */}
         <div className="flex flex-col items-center justify-center py-4 pb-4 border-b border-b-gray-300 dark:border-gray-600">
           <Image
