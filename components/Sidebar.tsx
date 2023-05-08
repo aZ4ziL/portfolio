@@ -35,8 +35,8 @@ export default function Sidebar({ children }: Props) {
       </div>
       <div
         className={`w-full mb-12 md:mb-0 md:w-[300px] md:min-h-screen fixed md:static top-0 ${
-          showSidebar ? "left-0 opacity-100 visible" : "-left-[1000px] opacity-0 invisible"
-        } md:visible md:opacity-100 z-50 bg-white dark:bg-gray-900 border-r border-r-gray-300 dark:border-r-gray-600 transition-all duration-300 ease-in-out`}
+          showSidebar ? "left-0 opacity-100 visible" : "-left-[300px] opacity-0 invisible"
+        } md:visible md:opacity-100 z-50 bg-white dark:bg-gray-900 border-r border-r-gray-300 dark:border-r-gray-600 transition-all duration-300 ease-in`}
       >
         <div className="md:hidden absolute top-2 right-2">
           <button
@@ -180,6 +180,11 @@ export default function Sidebar({ children }: Props) {
               <div className="w-[65%] h-full bg-sky-600 rounded-s-full"></div>
             </div>
           </div>
+        </div>
+        <div className="p-4 mt-2 pb-4">
+          <span className="text-sky-600 text-sm uppercase">
+            Berkeinginan untuk mempelajari hal baru
+          </span>
         </div>
       </div>
       <div className="w-full">

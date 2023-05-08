@@ -1,3 +1,4 @@
+import Progress from "@/components/Progress";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata = {
@@ -6,5 +7,10 @@ export const metadata = {
 };
 
 export default function PortfolioLayout({ children }: { children: React.ReactNode }) {
-  return <Sidebar>{children}</Sidebar>;
+  return (
+    <>
+      <Progress />
+      <Sidebar>{children}</Sidebar>
+    </>
+  );
 }
