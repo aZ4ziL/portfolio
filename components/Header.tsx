@@ -11,8 +11,8 @@ export default function Header() {
           Saya Fajri Fath <span className="text-sky-600">Full-stack</span> Developer
         </h1>
         <p className="text-sm font-extralight italic">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias corrupti eius illo
-          consequuntur veniam minima eum porro ipsam aliquid velit!
+          Seseorang yang suka dengan dunia pemrograman karena dunia pemrograman ini sama dengan
+          lika-liku kehidupan, harus dihadapi walaupun sering terjadi kesahalan.
         </p>
         <div className="flex items-center justify-center mt-2">
           <button className="flex items-center gap-3 bg-sky-600 hover:bg-sky-500 text-white rounded-full px-5 py-2">
